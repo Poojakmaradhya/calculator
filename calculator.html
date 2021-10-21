@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            background-image: url(./1.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .demo{
+            position:absolute;
+            top:50%; left:50%; 
+            transform: translateX(-50%) translateY(-50%);
+            background-color: darkcyan;
+            width: 400px; height: 500px;
+            text-align: center;
+    
+        }
+        .calci{
+           margin-left: 50px;
+           margin-top: 30px;
+        }
+        input[type="button"]{
+            font-size: xx-large;
+            margin-bottom: 12px;
+            background-color: whitesmoke;
+        }
+        input[type="text"]{
+            font-size: 20px;
+            height: 30px; width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+<div class="Title">
+<h1>Simple Calculator</h1>
+</div>
+<div class="calci">
+<table>
+    <tr>
+        <td colspan="3"><input type="text" id="result"></td>
+        <td><input type="button" onclick="clr()" value="C"></td>
+    </tr>
+    <tr>
+            <td><input type="button" value="1" onclick="display('1')"></td> 
+            <td><input type="button" value="2" onclick="display('2')"></td> 
+            <td><input type="button" value="3" onclick="display('3')"></td> 
+            <td><input type="button" onclick="equate()" value="="></td> 
+        
+    </tr>
+    <tr>
+        
+            <td><input type="button" value="4" onclick="display('4')"></td> 
+            <td><input type="button" value="5" onclick="display('5')"></td> 
+            <td><input type="button" value="6" onclick="display('6')"></td> 
+            <td><input type="button" value="+" onclick="display('+')"></td> 
+        
+    </tr>
+    <tr>
+        
+            <td><input type="button" value="7" onclick="dislpay('7')"></td> 
+            <td><input type="button" value="8" onclick="display('8')"></td> 
+            <td><input type="button" value="9" onclick="display('9')"></td> 
+            <td><input type="button" value="/" onclick="display('/')"></td> 
+        
+    </tr>
+    <tr>
+        
+            <td><input type="button" value="*" onclick="dislpay('*')"></td> 
+            <td><input type="button" value="0" onclick="dislpay('0')"></td> 
+            <td><input type="button" value="." onclick="dislpay('.')"></td> 
+            <td><input type="button" value="-" onclick="dislpay('-')"></td> 
+        
+    </tr>
+</table>
+</div>
+    </div>
+<script type="text/javascript">
+function display(val){
+    var p=document.getElementById("result").value+=val;
+}
+function equate(){
+    var x=document.getElementById("result").value;
+    var y=eval(x);
+    document.getElementById("result").value=y;
+}
+function clr(){
+    document.getElementById("result").value=" ";
+}
+</script>
+</body>
+</html>
